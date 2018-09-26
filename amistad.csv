@@ -1,0 +1,13 @@
+from,To,peso,tipo
+Anna,Ben,10,escuela
+Anna,Larry,17,face
+Anna,Rose,3,trabajo
+Anna,Nora,4,escuela
+Anna,Carol,2,trabajo
+Anna,Rudy,18,face
+Ben,Rose,1,face
+Ben,Carol,12,trabajo
+Linda,Larry,5,face
+Linda,James,6,escuela
+Larry,Nora,9,escuela
+Rose,Nora,14,trabajo
