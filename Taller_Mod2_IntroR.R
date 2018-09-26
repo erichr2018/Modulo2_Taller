@@ -1,10 +1,10 @@
 ############################################################
 #          Curso Redes Aplicadas 2018 ....                 #
 ############################################################
-#                  Sesi贸n 2:                               #
+#                  Sesion 2:                               #
 ###########28 de septiembre 2018############################
 ############################################################
-#         Taller introducci贸n a R                          #
+#         Taller introduccion a R                          #
 ############################################################
 
 
@@ -13,67 +13,84 @@
 
 
 ## Las funciones que vamos a aprender en este Modulo son:
-#            1. Listas
-#            2. vectores
+#            1. vectores [logicos]
+#            2. Listas
 #            3. Matrices
 #            4. DataFrame
 
 
 ################Vectores logicos ################################
 
-#Igual que los vectores numericos R permite manipular cantidades logicas.
-# Los elementos de una vector logico pueden ser TRUE (T), FALSE (F) o NA (not available)
-# Los vectores logicos son generados por  "condiciones"
+# Igual que los vectores numericos o de caracteres de R, los 
+# vectores logicos nos permite manipular cantidades logicas.
+# Los elementos de una vector logico pueden ser TRUE (T), FALSE (F) o NA (Not Available)
+# Los vectores logicos son generados por  "condiciones". 
+# Ejemplo
+
+x <- c(5,10, 15, 35, 1, 80, 12, 25)
 
 temp <- x > 13
 
-#temp es un vector de la misma dimension que x  con los valores FALSE o para los
-# elementos de x que no cumplen la condici贸n y TRUE para la que si
+
+# temp: es un vector de la misma dimension que x  con los valores FALSE o para los
+# elementos de x que no cumplen la condicion y TRUE para la que si
 
 temp
+
 
 # Los operadores logicos son: <, <=, >=, == igualdad exacta, != para desiguales
 # si c1 y c2 son expresiones logicas entonces c1 & c2 es la intersecci贸n ("y")
 # c1 | c2 es la union ("O")  y !c1 es la negacion de c1
 
+temp <- x != 13
+temp
 
-# Los vectores logicos se pueden usar con aritmetica ordinarioa, en los que 
-# FALSE se convierte en 0 y TRUE en 1 . Sin embargo, hay situaciones donde los
-# vectores logicos  y sus contrapartes numericas coercionadas no son equivalentes
-# se ve acontinuacin
+temp <- x == 13
+temp
+
+temp <- x !=80
+temp 
+
+temp <- x == 80
+temp
+
+x == 80
+
+# Los vectores logicos se pueden operar de forma aritmetica, en estos casos  
+# FALSE se convierte en 0 y TRUE en 1 . Sin embargo, hay situaciones 
+# donde los vectores logicos  y sus contrapartes numericas no son equivalentes
+# Vemos a continuacion algunos casos
 
 
-###############Valores omitidos ##########################################
+######        Valores omitidos         ###################
 
 
 # En algunos casos los componentes de un vector puede que no sean completamente
-# conocidos. Cuando un elemento o valor es "not available" o un "missing value"
-# en el sentido estadistico, un lugar junto a un vector pude ser resevado asignan-
-# dole el valor especial NA. En general cualquier operacion sobre un NA se convierte
-# en un NA. La motivaci贸n para esta regla es simplemente que si la especificacion
-# de una operaci贸n es completamente, el resultado no pude conocerse y por lo 
-# tanto es " not available".
+# conocidos. Cuando un elemento o valor es "Not Available" o un "Missing Value"
+# en el sentido estadistico, un lugar en un vector pude ser resevado asignandole
+# el valor especial NA. En general cualquier operacion sobre un NA se convierte
+# en un NA. 
 
 
-# la funcion is.na(x) da un vector logico  del mismo tama帽o que x con el valor TRUE
-# si y solo si el correspondiente elemento x es NA
+# is.na(x)    Esta funcion da un vector logico  del mismo tama駉 que x con el 
+#             valor TRUE si y solo si el correspondiente elemento x es NA.
 
 
-z <- c(1:3, NA) ; ind <-is.na(z)
+z <- c(1:3, NA) ; ind <- is.na(z)
 
 z ; ind
 
 # Observe que la expresion logica x==NA es bastante diferente  de is.na(x)
-# puesto que NA no es realmente un numero sino un marcador pra una cantidad
-# que no esta disponible . pOR LO tanto x==NA es un vector de la 
+# puesto que NA no es realmente un numero sino un marcador para una cantidad
+# que no esta disponible . Por lo tanto x==NA es un vector de la 
 # misma longitud  que x con todos los valore son NA como expresion logica en
 # si misma incompleta y por lo tanto indecidible.
 
-x==NA
+x == NA
 
 x
 
-# Una segunda clase de valores los representa los "missing" valores omitidos
+# Una segunda clase de valores los representa los "Missing" valores omitidos
 # que son producidos  por el calculo computacional, son los  llamados Not a Number
 # el valor NaN. 
  
@@ -83,9 +100,8 @@ Inf - Inf
 
 x
 
-is.na(xx)
+is.na(x)
 
-xx
 is.na(NA)
 
 is.na(NaN)
@@ -93,7 +109,7 @@ is.na(NaN)
 # is.na(xx) es TRUE tanto para NA y NaN
 
 
-#############Vectores caracteres############################
+###          Vectores caracteres       ########
 
 
 # Las cantidades caracter y los vectores caracter se usan frecuntemetne
@@ -110,12 +126,15 @@ is.na(NaN)
 # los vectores caracter pueden ser concatenados en un vector por la funcion
 # c()
 
-# La funcion paste()  toma un numero arbitrario de argumentos y  los concatena 
-# uno por uno  en una cadena de caracteres. Cualesquiera numeros dados  entre los argumnto
-# son coercionados en un argumento caracter en forma evidente, esto es, los argumentos 
-# son separados por default en el resultado por un caracter de espacio en blanco , pero 
-# pero esto puede ser cambiado  por los argumentos llamados sep=string, que cambia 
-# esto a string, posiblemtne vacio
+
+# paste() :   Esta funcion toma un numero arbitrario de argumentos y  los concatena 
+#             uno por uno  en una cadena de caracteres. Cualesquiera numeros dados
+#             entre los argumnto son coercionados en un argumento caracter en forma 
+#             evidente, esto es, los argumentos son separados por default en el 
+#             resultado por un caracter de espacio en blanco , pero pero esto puede 
+#             ser cambiado  por los argumentos llamados sep=string, que cambia esto
+#             a string, posiblemtne vacio
+
 
 labs <- paste(c("X","Y"),1:10,sep="")
 
@@ -215,7 +234,7 @@ y
 
 ############Objetos, sus modos y sus atributos############
 
-# Atributos intrinsecos: modoo y longitud
+# Atributos intrinsecos: modo y longitud
 
 # Las entidades sobre las que opera R son  tecnicamente conocidas como "objetos"
 
