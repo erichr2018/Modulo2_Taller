@@ -1,10 +1,10 @@
 ############################################################
 #          Curso Redes Aplicadas 2018 ....                 #
 ############################################################
-#                  SesiÛn 2:                               #
+#                  Sesi√≥n 2:                               #
 ###########28 de septiembre 2018############################
 ############################################################
-#         Taller introducciÛn a R                          #
+#         Taller introducci√≥n a R                          #
 ############################################################
 
 
@@ -13,7 +13,7 @@
 ##           usados en este curso.
 
 
-## Lo que aprendera
+## Lo que aprendera lllllllllll
 
 
 ################Vectores logicos ################################
@@ -25,12 +25,12 @@
 temp <- x > 13
 
 #temp es un vector de la misma dimension que x  con los valores FALSE o para los
-# elementos de x que no cumplen la condiciÛn y TRUE para la que si
+# elementos de x que no cumplen la condici√≥n y TRUE para la que si
 
 temp
 
 # Los operadores logicos son: <, <=, >=, == igualdad exacta, != para desiguales
-# si c1 y c2 son expresiones logicas entonces c1 & c2 es la intersecciÛn ("y")
+# si c1 y c2 son expresiones logicas entonces c1 & c2 es la intersecci√≥n ("y")
 # c1 | c2 es la union ("O")  y !c1 es la negacion de c1
 
 
@@ -47,12 +47,12 @@ temp
 # conocidos. Cuando un elemento o valor es "not available" o un "missing value"
 # en el sentido estadistico, un lugar junto a un vector pude ser resevado asignan-
 # dole el valor especial NA. En general cualquier operacion sobre un NA se convierte
-# en un NA. La motivaciÛn para esta regla es simplemente que si la especificacion
-# de una operaciÛn es completamente, el resultado no pude conocerse y por lo 
+# en un NA. La motivaci√≥n para esta regla es simplemente que si la especificacion
+# de una operaci√≥n es completamente, el resultado no pude conocerse y por lo 
 # tanto es " not available".
 
 
-# la funcion is.na(x) da un vector logico  del mismo tamaÒo que x con el valor TRUE
+# la funcion is.na(x) da un vector logico  del mismo tama√±o que x con el valor TRUE
 # si y solo si el correspondiente elemento x es NA
 
 
@@ -129,7 +129,7 @@ c(labs)
 #   
 # Los vectores indices pueden ser de cuatro distintos tipos
 # 
-# 1. Vector logico : En este caso el vector indice  es reciclado al mismo tamaÒo
+# 1. Vector logico : En este caso el vector indice  es reciclado al mismo tama√±o
 # que el vector a partir del que los elemento son  seleccionados. Los valores correspondintes
 # son TRUE en el vector indice que es seleccionado y aquellos correspondientes a FALSE son
 # omitidos Ejempll
@@ -192,7 +192,7 @@ mandado
 desayuno
 
 
-#La ventaja es que es m·s facil recordar los indices alfanumericos que 
+#La ventaja es que es m√°s facil recordar los indices alfanumericos que 
 # los numericos. Esta opcion es util en coneccion con los data frames, 
 
 #Una expresion indexada puede tambien aparecer  sobre el 
@@ -313,7 +313,7 @@ mode(e)
 
 # De forma similar character()  es un vector caracter vacio y asi sucesivamente.
 
-#Una vez que es creado un objeto de cualquier tamaÒo, se le pueden agregar nuevos 
+#Una vez que es creado un objeto de cualquier tama√±o, se le pueden agregar nuevos 
 # componentes  SIMPLEMENTE DANDOLE UN INDICE FUERA DE SU RANGO PREVIO.  
 
 length(e)
@@ -331,7 +331,7 @@ length(e)
 # funcion scan()  para input
 
 
-# Para truncar el tamaÒo de un objeto solo se requiere  una asignaciÛn. 
+# Para truncar el tama√±o de un objeto solo se requiere  una asignaci√≥n. 
 
 alpha <- c(1:10)
 
@@ -390,10 +390,10 @@ z
 #Todos los objetos en R tienen una "clase",  que se puede mostrar con la funcion "class".
 # Para vectores simples esto es solo el modo, por ejemplo: "numeric", "logical", "character" o "lista"
 # pero "matrix", "array", "factor" y "data.frame" son otros posibles valores. 
-# Un atributo especial conocido como "clase" del objeto es usado para permitir un estilo de programaciÛn
+# Un atributo especial conocido como "clase" del objeto es usado para permitir un estilo de programaci√≥n
 # orientada a objetos en R. 
 #EJEMPLO:
-# Un objeto de la clase "data.frame", se puede imprimir de cierta forma, la funcion "plot()"  podrÌa
+# Un objeto de la clase "data.frame", se puede imprimir de cierta forma, la funcion "plot()"  podr√≠a
 # mostrarlo graficamente  de cierta forma, y otras funciones genericas tales como summary() reaccionaran
 # esta en  una forma sensitiva a su clase
 
@@ -414,13 +414,13 @@ z
 
 
 
-# Un factor es un objeto vector usado para especificar una clasificaciÛn discreta
+# Un factor es un objeto vector usado para especificar una clasificaci√≥n discreta
 #(agrupamiento)  de componentes de otros vectores de la misma longitud. R da tanto
-# factores ordenados como desordenados. Mientras que la aplicaciÛn "real" de factores
+# factores ordenados como desordenados. Mientras que la aplicaci√≥n "real" de factores
 # es con un modelo  formulado, veremos aqui un ejemplo especifico
 
 # Ejemplo Especifico##
-#Suponte que tienes 30 personas de todo el paÌs y que tienes una abreviatura
+#Suponte que tienes 30 personas de todo el pa√≠s y que tienes una abreviatura
 # para cada uno de los estados de la republica. En el siguiente "vector caracter"
 # tienes la abreviatura de los estados de origen de cada una de las 30 personas
 
@@ -466,8 +466,8 @@ incmeans
 
 ####Expliacion#################
 ###############################
-#La funciÛn tapply()  es usa para aplicar una funcion, aquÌ mean(),
-# a cada grupo de componentes del primer argumento, aquÌ ingresos
+#La funci√≥n tapply()  es usa para aplicar una funcion, aqu√≠ mean(),
+# a cada grupo de componentes del primer argumento, aqu√≠ ingresos
 # definidos por los niveles del segundo componente, aqui statef,
 # como si fueran estructuras vectoriales separadas. El resultado
 # es una estructura de la misma longitud que los niveles atributo
@@ -478,7 +478,7 @@ incmeans
 # para calcular el error estandar para cualquier vector. Dado 
 # que existe  una builtin function var() para calcular la varianza
 # de la muestra, tal funcion es un una linea muy simple, que se
-# especifica por  la asignaciÛn
+# especifica por  la asignaci√≥n
 
 stderr <- function(x) sqrt(var(x)/length(x))
 
@@ -504,7 +504,7 @@ incster
 
 # La funcion 
 # ordered()
-# la funcion crea dichos factores ordenados por lo dem·s es identica que
+# la funcion crea dichos factores ordenados por lo dem√°s es identica que
 # factor
 # Para la mayoria de los propositos  la unica diferencia entre ordered y 
 # unordered factors es que los primeros se muestran impresos  en el orden
@@ -603,7 +603,7 @@ X
 # NA en el resultado
 
 
-#######La funciÛn array()#######
+#######La funci√≥n array()#######
 
 # Al igual que una estructura de vector dada una atributo "dim", los arrays pueden ser
 # construidos a partir de vectores por la funcion array, que tiene la forma
@@ -614,14 +614,14 @@ Z <- array(h, dim=c(3,4,2))
 
 Z 
 
-#No se ha declarado h. Si el tamaÒo de h es exactamente 24 el resultado es el mismo
+#No se ha declarado h. Si el tama√±o de h es exactamente 24 el resultado es el mismo
 
 Z <- h ; dim(Z) <- c(3,4,2)
 
 Z
 
-# øQuÈ pasa si h es menor que 24? sus valores son reciclados desde el inicio nuevamente
-# para hacerlo de 24 PERO LA DIMENSION dim(h) <- c(3,4,2) podria mandar una seÒal
+# ¬øQu√© pasa si h es menor que 24? sus valores son reciclados desde el inicio nuevamente
+# para hacerlo de 24 PERO LA DIMENSION dim(h) <- c(3,4,2) podria mandar una se√±al
 # de error  como un ejemplo:
 
 Z <- array(0,c(3,4,2)) # hacemos un arreglo de ceros
@@ -660,10 +660,10 @@ Z[]   # el arreglo completo por de fault
 
 ## La expresion es escaneada de izquierda a derecha
 ## Cualquier operando que sea un vector corto se extiende por reclicle de sus 
-## valores hasta que tenga el tamaÒo de cualquiera de los operandos
+## valores hasta que tenga el tama√±o de cualquiera de los operandos
 ## Siempre que se encuentren vectores y matrices cortos,los arrays todos deben tener
 # el mismo atribute dim o resulta un error.
-## Cualquier operando vector m·s grande que una matriz o array genera un error
+## Cualquier operando vector m√°s grande que una matriz o array genera un error
 ##Si las estructuras array estan presentes y no hay error o coercion de vector ha sido 
 # hecha, el resultado es una estructura array con la dim comun atributo dim de su 
 # arrays operados.
@@ -673,7 +673,7 @@ Z[]   # el arreglo completo por de fault
 # Los siguientes datos son del libro: A beginners 2.1 First Steps in R
 
 # Medidas morfologicas de 8 aves
-#tamaÒo de la cabeza, las alas, longitud del tarso, peso
+#tama√±o de la cabeza, las alas, longitud del tarso, peso
 
 # Longitud de las alas
 
@@ -692,7 +692,7 @@ Ala3 <- 53.5
 Ala4 <- 55
 Ala5 <- 52.5
 
-#Mas nombres ser·n necesarios para los datos restantes
+#Mas nombres ser√°n necesarios para los datos restantes
 # como hemos visto podemos hacer calculos con estos valores
 # como los siguientes:
 
@@ -721,8 +721,8 @@ Av <- (Ala1 + Ala2 + Ala3 + Ala4 + Ala5)/5
 
 SQ.ala1
 
-#Para mostrar el valor despues de asignar tenemos la opciÛn
-# de colocar parentesis alrededor de la asignaciÛn
+#Para mostrar el valor despues de asignar tenemos la opci√≥n
+# de colocar parentesis alrededor de la asignaci√≥n
 
 (SQ.ala1 <- sqrt(Ala1))
 
@@ -808,7 +808,7 @@ Id <- c(1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3
 
 Id
 
-# La variable Id nos servir· para indicar  que todas
+# La variable Id nos servir√° para indicar  que todas
 # las observaciones con un mismo valor de Id pertenecen
 # a la misma variable.
 
@@ -819,7 +819,7 @@ Id <- rep(c(1,2,3,4), each=8)
 
 Id
 
-# Se puede simplificar aun m·s
+# Se puede simplificar aun m√°s
 
 Id <- rep(1 : 4, each=8)
 
@@ -926,7 +926,7 @@ Z2
 
 ###La funcion Vector#####
 
-# En vez de la funciÛn c se puede usar vector 
+# En vez de la funci√≥n c se puede usar vector 
 # Supon que se desea crear un vector de longitud
 # 8 qe contenga los dato de AlasL
 
@@ -974,7 +974,7 @@ Dmat
 
 # Se debe definir la matriz antes de ingresar los elementos.
 
-# Se podrÌan ingresar elemento a elemento
+# Se podr√≠an ingresar elemento a elemento
 
 Dmat[1,1] <- 59.0
 Dmat[1,2] <- 22.3
@@ -1009,7 +1009,7 @@ is.data.frame(Dmat2)
 # Por ejemplo es posible combinar los pesos originales
 # (pero renombrados) y la raiz de los pesos en el data frame.
 # OTRA COSA IMPORTANTE DE DATA.FRAME ES QUE SE PUEDEN
-# COMBINAR  VARIABLES NUMERICAS, DE CAR¡CTER Y FACTORES.
+# COMBINAR  VARIABLES NUMERICAS, DE CAR√ÅCTER Y FACTORES.
 # ESTOS UTLTIMOS SON VARIABLES NOMINALES (CATEGORICAS) 
 # SE VEN MAS ABAJO
 
@@ -1040,7 +1040,7 @@ Dfrm$W
 
 
 #Hasta ahora hemos usado herramientas que combinan
-# datos para producri una tabla donde cada  renglÛn
+# datos para producri una tabla donde cada  rengl√≥n
 # es una unidad de muestreo (un pajaro en este caso)
 
 
@@ -1090,7 +1090,7 @@ M <- lm(WC ~ Dfrm$W, data = Dfrm)
 
 # No vamos a ver que es una regresion lineal
 # pero nos interesa como R almacena
-# la informaciÛn obtenida en el objeto M
+# la informaci√≥n obtenida en el objeto M
 
 names(M)
 
@@ -1159,7 +1159,7 @@ AllData
 # Tenemos un archivo en llamado squid.txt delimitado
 # por tab.
 
-# PRECAUCI”N: Excel tiene la tendencia de  agregar columnas
+# PRECAUCI√ìN: Excel tiene la tendencia de  agregar columnas
 # extres de NAs a el archivo ascii si tiene en alguna parte
 # comentarios
 
@@ -1174,10 +1174,10 @@ AllData
 ###################
 
 #Leemos los datos
-Random <- read.table(file = "C:\\Users\\Eric\\Documents\\Economia\\Proyectos_2018\\Curso_Redes_2018\\Curso_Redes_2018_Material_de_Trabajo\\Temas_Eric\\Modulo_1_ IntroducciÛn a la teorÌa de redes y sus herramientas de an·lisis\\Modulo_1_2_Practica\\RBook\\Random.txt", header = TRUE, dec = ",")
+Random <- read.table(file = "C:\\Users\\Eric\\Documents\\Economia\\Proyectos_2018\\Curso_Redes_2018\\Curso_Redes_2018_Material_de_Trabajo\\Temas_Eric\\Modulo_1_ Introducci√≥n a la teor√≠a de redes y sus herramientas de an√°lisis\\Modulo_1_2_Practica\\RBook\\Random.txt", header = TRUE, dec = ",")
 
 Random
-# øCuales son los nombres de las variables?
+# ¬øCuales son los nombres de las variables?
 names(Random)
 
 # str (structure) es un comando que da informacion a cerca del status de 
@@ -1187,7 +1187,7 @@ str(Random)
 
 # si observamos la mayoria son considerados 
 # Factor, lo cual dice que si consideramos 
-# funciones como mean o un boxplo R enviar·
+# funciones como mean o un boxplo R enviar√°
 # error. Puesto que no son numericos
 
 # Por lo que es importante mezclar read.table con
@@ -1214,5 +1214,5 @@ Random [ , 2]
 
 # otra diferencia entre read.table y scan es 
 # que read table  guarda los datos como data.frame
-# mientras que scan lo hace como matriz. La fuciÛn
+# mientras que scan lo hace como matriz. La fuci√≥n
 # 
