@@ -8,12 +8,15 @@
 ############################################################
 
 
-## Objetivo: Familiarizar al alumno con el uso de R y mostrar
-##           el funcionamiento de algunos de los comandos 
-##           usados en este curso.
+## Objetivo: Familiarizar al alumno con algunas de las funciones
+#            de R, utiles al momento de crear un grafo de Igraph. 
 
 
-## Lo que aprendera lllllllllll
+## Las funciones que vamos a aprender en este Modulo son:
+#            1. Listas
+#            2. vectores
+#            3. Matrices
+#            4. DataFrame
 
 
 ################Vectores logicos ################################
