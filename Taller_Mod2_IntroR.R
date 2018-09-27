@@ -129,20 +129,33 @@ is.na(NaN)
 
 # paste() :   Esta funcion toma un numero arbitrario de argumentos y  los concatena 
 #             uno por uno  en una cadena de caracteres. Cualesquiera numeros dados
-#             entre los argumnto son coercionados en un argumento caracter en forma 
-#             evidente, esto es, los argumentos son separados por default en el 
-#             resultado por un caracter de espacio en blanco , pero pero esto puede 
-#             ser cambiado  por los argumentos llamados sep=string, que cambia esto
-#             a string, posiblemtne vacio
+#             entre los argumentos son coercionados en un argumento caracter, esto es,
+#             los argumentos son separados por default en el resultado por un caracter
+#             de espacio en blanco, pero esto puede ser cambiado  por los argumentos 
+#             llamados sep = string, que cambia el espacio en blaco por string, 
+#             posiblemtne vacio.
 
 
-labs <- paste(c("X","Y"),1:10,sep="")
+labs <- paste(c("X","Y"),1:10)
 
 labs
 
 c(labs)
 
-##################Indices de vectores; seleccinando y modificando subconjuntos 
+labs2 <- paste(c("X", "Y"), 1:10, collapse = ",")
+labs2
+
+labs3 <- paste(c("X","Y"),1:10, sep = ", ")
+labs3
+
+labs4 <- paste(c("X","Y"),1:10, sep = "") #quita espacio en blaco
+labs4
+
+
+###    Indices de vectores; seleccinando    ###
+#                    y                        #
+#          modificando subconjuntos           #
+
 
 # Los subconjunto de elementos de vectores puede ser seleccionados "appending" a el nombre
 # del vecto un "index vector" entre corchetes. Mas en general  cualquier expresion  que 
