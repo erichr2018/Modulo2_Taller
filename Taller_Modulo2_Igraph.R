@@ -1,15 +1,15 @@
 ############################################################
 #          Curso Redes Aplicadas 2018 ....                 #
 ############################################################
-#                  SesiÛn 2:                               #
-###########28 de septiembre 2018############################
+#                    Sesi√≥n 2:                             #
+##########     28 de septiembre 2018              ##########
 ############################################################
-#         Taller introducciÛn a Igraph                     #
+#         Taller introducci√≥n a Igraph                     #
 ############################################################
 
 
-## Objetivo: El alumnos se familiarizar· con Igraph
-#             y ser· capaz de contruir un objeto "grafo"
+## Objetivo: El alumnos se familiarizar√° con Igraph
+#             y ser√° capaz de construir un objeto "grafo"
 #            de Igraph a partir de las distintas opciones
 #            existentes.
 
@@ -36,19 +36,19 @@ help("igraph")
 ?igraph
 
 
-###### IntroduccciÛn a Igraph ##############
+###### Introduccci√≥n a Igraph ##############
 
 
 # Igraph cuenta con algunas funciones que hacen grafos de manera predeterminada.
 # Vamos a comenzar usando un comando predeterminado de Igraph, el fin de esto
-# es mostrar la informaciÛn que contiene  un objeto "grafo" de igraph. No debe
+# es mostrar la informaci√≥n que contiene  un objeto "grafo" de igraph. No debe
 # preocuparse si no entiende en primer instancia la funcion make_ring, pero 
-# centre su atencion en la informaciÛn que se dar· m·s adelante.
+# centre su atencion en la informaci√≥n que se dar√° m√°s adelante.
 
 # make_ring()
 
-# DescripciÛn
-# Un anillo es un "lattice" de una dimension y esta funciÛn es un caso especial de 
+# Descripci√≥n
+# Un anillo es un "lattice" de una dimension y esta funci√≥n es un caso especial de 
 # "make_lattice"
 
 # Modo de uso
@@ -79,7 +79,7 @@ plot(make_ring(10))
 
 print_all(make_ring(10))    #Nos enfocamos en la info que da
 
-# ExplicaciÛn
+# Explicaci√≥n
 
 #   IGRAPH  nos dice que es un grafo de Igraph
 #   ----    4 bits  1)  U undirected (no direccinado)
@@ -89,18 +89,18 @@ print_all(make_ring(10))    #Nos enfocamos en la info que da
 #                   4)  B grafos bipartitos (si los nodos tiene el atributo "tipo")
 
 # 2 numeros         1) numero de nodos
-#                   2) numero de vÌnculos
+#                   2) numero de v√≠nculos
 
 # doble -- y el nombre del grafo    Si el grafo tiene el atributo "nombre"
 
-# Siguiente renglÛn   contiene los atributos del grafo
-# el atributo "name" de tipo car·cter
+# Siguiente rengl√≥n   contiene los atributos del grafo
+# el atributo "name" de tipo car√°cter
 # mutual (g/x)  y circular (g/x) atributos tipo complex
-# ser refire que estos atributos no son ni numericos ni car·cter
+# ser refire que estos atributos no son ni numericos ni car√°cter
 
-# Al final pone la lista de vÌnculos
+# Al final pone la lista de v√≠nculos
 
-# La siguiente funcion da la informaciÛn de manera resumida
+# La siguiente funcion da la informaci√≥n de manera resumida
 summary(make_ring(10))
 
 
@@ -117,11 +117,11 @@ plot(make_ring(10, circular=TRUE))  #linea o circular
 ################ graph_from_litera() #######################
 
 
-# Creando una grafos (pequeÒos) via una interfaz simple
+# Creando una grafos (peque√±os) via una interfaz simple
 #       graph_from_literal(..., simplify=TRUE)
-#DescripciÛn:
-# Esta funciÛn es util si lo que se desea es crear un
-# grafo pequeÒo (con nombres) de forma rapida, sirve
+#Descripci√≥n:
+# Esta funci√≥n es util si lo que se desea es crear un
+# grafo peque√±o (con nombres) de forma rapida, sirve
 # tanto para grafos direccionados como no direccionados
 
 ?graph_from_literal
@@ -129,15 +129,15 @@ plot(make_ring(10, circular=TRUE))  #linea o circular
 # ...       esta parte da la estructura del grafo
 # simplify  es un escalar logico para la cracion del 
 #           grafo. Por default el grafo es simplificado
-#           no hay blucles ni multivÌnculos
+#           no hay blucles ni multiv√≠nculos
 
-graph_from_literal()   # crea un grafo 0 nod 0 vÌnculos
+graph_from_literal()   # crea un grafo 0 nod 0 v√≠nculos
 
 print_all(graph_from_literal())  # ver informacion
 
 # Es necesario dar informacion para crear la estructura
 # del grafo. Esta informacion consiste en el nombre de
-# los nodos y los operadores de vÌnculos. 
+# los nodos y los operadores de v√≠nculos. 
 # VINCULOS:
 # una secuencia de los caracteres "-" y "+" vinculos y 
 # flechas respectivamente.
@@ -169,8 +169,8 @@ graph_from_literal(A:B:C:D -- A:B:C:D)
 
 plot(graph_from_literal(A:B:C:D -- A:B:C:D))
 
-# En grafos direccinados, los vÌnculos son creados si se incluye
-# el operador flecha (+) AL FINAL DEL VÕNCULO
+# En grafos direccinados, los v√≠nculos son creados si se incluye
+# el operador flecha (+) AL FINAL DEL V√çNCULO
 
 graph_from_literal(A -+ B -+ C)
 
@@ -184,7 +184,7 @@ graph_from_literal(A +- B -- C)
 
 plot(graph_from_literal(A +- B -- C)) # no se crea el vinculo b-c
 
-# Para vÌnculos mutuos tenemos
+# Para v√≠nculos mutuos tenemos
 
 graph_from_literal(A +-+ B +---+ C ++ D + E + E )
 
@@ -209,18 +209,18 @@ plot(graph_from_literal("  +  " +- "  -  " -+ "  %  "))
 
 
 ##########  make_graph() ##################
-# DescripciÛn
-# Crea un grafo de Igraph a partir de una lista de vÌnculos
+# Descripci√≥n
+# Crea un grafo de Igraph a partir de una lista de v√≠nculos
 #o un grafo conocido que esta precargado
 
 # Modo de Uso (revisar el manual)
 
-# make_graph(vÌnculos, ..., n = max(vÌnculos), isolates = NULL, directed=TRUE,
+# make_graph(v√≠nculos, ..., n = max(v√≠nculos), isolates = NULL, directed=TRUE,
 #             dir= directed, simplify=TRUE)
 
-# make_directed_graph(vÌnculos, n = max(vÌnculos))
+# make_directed_graph(v√≠nculos, n = max(v√≠nculos))
 
-# make_undirected_graph(vinculos, n = max(vÌnculos))
+# make_undirected_graph(vinculos, n = max(v√≠nculos))
 
 # directed_graph(...)
 
@@ -228,13 +228,13 @@ plot(graph_from_literal("  +  " +- "  -  " -+ "  %  "))
 
 ## Argumentos:
 
-#   vinculos:         Un vector define los vÌnculos, el primer elemento 
-#                     vÌnculado al segundo elemento, el tercer elemento
+#   vinculos:         Un vector define los v√≠nculos, el primer elemento 
+#                     v√≠nculado al segundo elemento, el tercer elemento
 #                     vinculado al cuarto y asi susesivamente. Si es un 
 #                     vector numerico estos son interpretados como los ids
-#                     de los nodos. Para vectores car·cter, estos son inter-
+#                     de los nodos. Para vectores car√°cter, estos son inter-
 #                     pretados como los nombres de los nodos
-#                     TabiÈn se puede proporcinar el nombre de un grafo concido
+#                     Tabi√©n se puede proporcinar el nombre de un grafo concido
 
 #  ... :              Se refiere a argumetos extras cuando el grafo es dado 
 #                     de forma literal (graph_from_literal) 
@@ -242,10 +242,10 @@ plot(graph_from_literal("  +  " +- "  -  " -+ "  %  "))
 #                     make_directed_graph o make_undirected_graph
 
 #  n :                es el numero de nodos en el grafo. Este argumento es
-#                     ignorado si  (con advertencia) si los vÌnculos son 
+#                     ignorado si  (con advertencia) si los v√≠nculos son 
 #                     nombres de nodos simbolicos. Se ignora si existe un id
 #                     del nodo en los vinculos. Para esta funcion es seguro
-#                     dar cero si el nodo con el id m·s largo no es aislado
+#                     dar cero si el nodo con el id m√°s largo no es aislado
 
 # isolates:           un vector caracter, con los nombres de los nodos aislados
 #                     para una lista de vinculos simbolicos. Se ignora para lista
@@ -257,7 +257,7 @@ plot(graph_from_literal("  +  " +- "  -  " -+ "  %  "))
 
 ### Como se menciono make_graph puede hacer algunos grafo conocidos. Se debe dar
 #   el nombre del grafo (insensible a mays y minus), un caracter escalar en lugar
-#   del argumento vÌnculos y otros argumentos son ignorados
+#   del argumento v√≠nculos y otros argumentos son ignorados
 
 c(1:10)
 
@@ -291,7 +291,7 @@ make_graph(c("A", "B", "B", "C", "C", "D"), isolates = c("E","F", "G"), directed
 
 plot(make_graph(c("A", "B", "B", "C", "C", "D"), isolates = c("E","F", "G"), directed=FALSE))
 
-# Los grafos notables para una lista m·s grande
+# Los grafos notables para una lista m√°s grande
 
 # ?make_graph
 
@@ -336,7 +336,7 @@ graph( ~ A-B-C-D-A)
 
 # Crea un grafo a partir del "Atlas de grafos"
 
-#DescripciÛn
+#Descripci√≥n
 
 #   graph_from_atlas crea un grafo a partir del libro
 #   "Un atlas de grafos" de Roland C. Read y Robin J.
@@ -361,14 +361,14 @@ plot(g)
 
 ##graph_from_edgelist###########
 
-#DescripciÛn
+#Descripci√≥n
 # graph_from_edgelist crea un grafo a partir de una lista de
-# vÌnculos. Su argumento es una matriz de dos columnas, cada 
+# v√≠nculos. Su argumento es una matriz de dos columnas, cada 
 # renglon define un vinculo. Si es una matriz numerica estos
 # elementos se interpretan como los id's de los nodos. Si es
 # una matriz de caracteres entonces se interpreta como los 
 # nombres simbolicos de los nodos y un id sera asignado a cada
-# nombre, y tambien se agregar· el atributo nombre del nodo
+# nombre, y tambien se agregar√° el atributo nombre del nodo
 
 #Modo de uso
 
@@ -376,18 +376,18 @@ plot(g)
 # from_edgelist(...)
 
 #Argumentos:
-#             el        La lista de vÌnculos, una matriz de 2 columnas
+#             el        La lista de v√≠nculos, una matriz de 2 columnas
 #                       puede ser numerica o de caracter
 #             directed  Si quiere crear un grafo direccionado
 #             ...       pasa a graph_from_edgelist
 
 #Veamos algunos ejemplos:
 
-c("gato", "perro", "perro" , "ratÛn")
+c("gato", "perro", "perro" , "rat√≥n")
 
-matrix(c("gato", "perro", "perro" , "ratÛn"),nc=2, byrow=TRUE)
+matrix(c("gato", "perro", "perro" , "rat√≥n"),nc=2, byrow=TRUE)
 
-el <- matrix(c("gato", "perro", "perro" , "ratÛn"),nc=2, byrow=TRUE)
+el <- matrix(c("gato", "perro", "perro" , "rat√≥n"),nc=2, byrow=TRUE)
 
 graph_from_edgelist(el)
 
@@ -402,7 +402,7 @@ plot(graph_from_edgelist(cbind(1:10, c(2:10,1))))
 
 #### Creando grafos desde matrices de adyacencia
 
-#DescripciÛn:
+#Descripci√≥n:
 
 # graph_from_adjacency_matrix es un funcion flexible para crear
 # un grafo de igraph a partir de matrices de adyacencia
@@ -418,7 +418,7 @@ plot(graph_from_edgelist(cbind(1:10, c(2:10,1))))
 # Argumentos    
 #             adjmatrix:      Una matriz de adyacencia cuadrada. 
 #             mode:           Un caracter escala que especifica como 
-#                             igraph podrÌa interpretar la matriz ingresada.  
+#                             igraph podr√≠a interpretar la matriz ingresada.  
 #                             posibles valores: directed, unidirected, upper
 #                             ,lower, max, min, plus.        
 #             weighted:       Este argumento especifica si crea un grafo
@@ -439,10 +439,10 @@ g1
 plot(g1)
 #####Creando grafos a partir de un data frame o viceversa##########
 
-# DescripciÛn:
-#             Esa funciÛn crea un grafo de igraph a partir de uno o dos
-#             data frames que contiene la lista (simbolica) de vÌnculos
-#             y atributos de  los vÌnculo y nodos.
+# Descripci√≥n:
+#             Esa funci√≥n crea un grafo de igraph a partir de uno o dos
+#             data frames que contiene la lista (simbolica) de v√≠nculos
+#             y atributos de  los v√≠nculo y nodos.
 
 # Modo de uso:
 
@@ -456,12 +456,12 @@ plot(g1)
 # Argumentos:
 
 #             x         un objeto igraph
-#             what      car·cter constante, si se quiere regresar infor
-#                       referente a los nodos, vÌnculos o ambos. Por default
-#                       son los vÌnculos
-#             d         Un data frame que contiene una lista de vÌnculos simbolicos
-#                       en las primeras dos columnas. Adem·s, las columnas adicionales
-#                       son consideradas como atributos de los vÌnculos.
+#             what      car√°cter constante, si se quiere regresar infor
+#                       referente a los nodos, v√≠nculos o ambos. Por default
+#                       son los v√≠nculos
+#             d         Un data frame que contiene una lista de v√≠nculos simbolicos
+#                       en las primeras dos columnas. Adem√°s, las columnas adicionales
+#                       son consideradas como atributos de los v√≠nculos.
 #             directed  Escalar logico, para crear o no un grafo direccionado
 #             vertices  Un data frame con metadatos de vertice, o NULL. 
 #             ...       Pasado a graph_from_data_frame
