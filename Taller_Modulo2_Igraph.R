@@ -14,7 +14,9 @@
 #            existentes.
 
 
-# PONER LAS FUNCIONES QUE APRENDERA
+# Funciones a usar:
+#                   graph_from_literal()    
+
 
 # Verificando el el directorio de trabajo 
 
@@ -69,65 +71,71 @@ help("igraph")
 
 ?make_ring    # ver manual
 
-make_ring(10)
+make_ring(10)  # Creamos un grafo de igraph, al crearse muestra la informacion en la consola
 
-# Para graficar, usamos la funcion plo( )
+# Sobre la informacion que se muestra despues de crear el grafo make_ring(10)
 
-plot(make_ring(10))
-
-# Ejemplos:
-
-print_all(make_ring(10))    #Nos enfocamos en la info que da
-
-# Explicación
-
-#   IGRAPH  nos dice que es un grafo de Igraph
-#   ----    4 bits  1)  U undirected (no direccinado)
+#   IGRAPH    nos dice que es un grafo de Igraph
+#   ----      4 bits  1)  U undirected (no direccinado)
 #                       D directed    (direccinado)
-#                   2)  N si los nodos tiene nombre
-#                   3)  W grafo pesado (vinculos con atributo de peso)
-#                   4)  B grafos bipartitos (si los nodos tiene el atributo "tipo")
+#                     2)  N si los nodos tiene nombre
+#                     3)  W grafo pesado (vinculos con atributo de peso)
+#                     4)  B grafos bipartitos (si los nodos tiene el atributo "tipo")
 
 # 2 numeros         1) numero de nodos
 #                   2) numero de vínculos
 
-# doble -- y el nombre del grafo    Si el grafo tiene el atributo "nombre"
+# --            despues de esto el nombre del grafo    
+#
+#       SIGUIENTE LINEA
+#
+# attr:         Si el grafo tiene algun (o algunos) atributo(s) en nuestro caso 
+#               el atributo "name" de tipo carácter
+#               mutual (g/x)  y circular (g/x) atributos tipo complex
+#               ser refire que estos atributos no son ni numericos ni carácter
+#
+#        Al final pone la lista de vínculos
 
-# Siguiente renglón   contiene los atributos del grafo
-# el atributo "name" de tipo carácter
-# mutual (g/x)  y circular (g/x) atributos tipo complex
-# ser refire que estos atributos no son ni numericos ni carácter
 
-# Al final pone la lista de vínculos
+#             OBTENIENDO INFORMACION DEL GRAFO
+
+# Hay varias formas de pedir la informacion de un grafo
+# a continuacion mostramos dos funciones que nos ayudan con esto, 
+# print_all() y  summary() 
+
+
+print_all(make_ring(10))    #Nos enfocamos en la info que da
 
 # La siguiente funcion da la información de manera resumida
-summary(make_ring(10))
+
+summary(make_ring(10))   # La misma informacion pero sin los vínculos
+
+# Graficamos el grafo
+
+plot(make_ring(10, circular=TRUE))  # circular
+
+plot(make_ring(10, circular=FALSE)) # Linea
 
 
-plot(make_ring(10, circular=TRUE))  #linea o circular
-
-###########################################################################
-###########################################################################
-# El siguiente es material para la 2 sesion del 28 de septiembre.         #
-# Es posible que se hagan modificaciones y correcciones para fines        #
-# expositivos. Si embargo puede ir revisando el material para que se      #
-# familiarice con este.                                                   #
-###########################################################################
-
-################ graph_from_litera() #######################
+####################  Una red simple  ####################
 
 
-# Creando una grafos (pequeños) via una interfaz simple
+################ graph_from_literal() #######################
+
+
+# Creando grafos (pequeños) via una interfaz simple
+#
 #       graph_from_literal(..., simplify=TRUE)
+#
 #Descripción:
-# Esta función es util si lo que se desea es crear un
-# grafo pequeño (con nombres) de forma rapida, sirve
-# tanto para grafos direccionados como no direccionados
+#             Esta función es util si lo que se desea es crear un
+#             grafo pequeño (con nombres) de forma rapida. Sirve
+#             tanto para grafos direccionados como no direccionados
 
 ?graph_from_literal
 
 # ...       esta parte da la estructura del grafo
-# simplify  es un escalar logico para la cracion del 
+# simplify  es un escalar logico para la creacion del 
 #           grafo. Por default el grafo es simplificado
 #           no hay blucles ni multivínculos
 
