@@ -20,8 +20,8 @@
 #                   sample()              graph_from_edgelist()
 #                   matrix()              cbind()
 #                   nrow()                rownames()
-#                   seq()                   
-
+#                   seq()                 data.frame()                   
+#                   as_data_frame()
 
 # Verificando el el directorio de trabajo 
 
@@ -575,9 +575,9 @@ plot(g2)
 
 
 # Descripción:
-#             Esa función crea un grafo de igraph a partir de uno o dos
-#             data frames que contiene la lista (simbolica) de vínculos
-#             y atributos de  los vínculo y nodos.
+#             Esta funcion crea un grafo de Igraph a partir de uno
+#             o dos data frames que contiene la lista (simbolica)
+#             de vínculos y atributos de  los vínculo y nodos.
 
 # Modo de uso:
 
@@ -587,32 +587,72 @@ plot(g2)
 
 # Argumentos:
 
-#             x         un objeto igraph
-#             what      carácter constante, si se quiere regresar infor
-#                       referente a los nodos, vínculos o ambos. Por default
-#                       son los vínculos
-#             d         Un data frame que contiene una lista de vínculos simbolicos
-#                       en las primeras dos columnas. Además, las columnas adicionales
-#                       son consideradas como atributos de los vínculos.
-#             directed  Escalar logico, para crear o no un grafo direccionado
-#             vertices  Un data frame con metadatos de vertice, o NULL. 
+#             x         un objeto Igraph
 
-# #
+#             what      Caracter constante, si se quiere regresar 
+#                       informacion referente a los nodos, vinculos
+#                       o ambos. Por default son los vínculos.
 
-#El aso tipico es que estas tablas se lean a partir de un archivo
+#             d         Un data frame que contiene una lista de 
+#                       vinculos simbolicos en las primeras dos
+#                       columnas. Además, las columnas adicionales
+#                       son consideradas como atributos de los 
+#                       vínculos.
 
-actores <- data.frame(nombre=c("Alicia", "Bob", "Cecil", "David", "Esmeralda"),edad=c(48,33,45,34,21)
-                      ,genero=c("F","M","F","M","F"))
-relaciones <- data.frame(from=c("Bob","Cecil","Cecil","David","David","Esmeralda"), to=c("Alicia", "Bob",
-                        "Alicia", "Alicia","Bob", "Alicia"))
-g <- graph_from_data_frame(relaciones, directed = TRUE,vertices = actores)
+#             directed  Escalar logico, para crear o no un grafo 
+#                       direccionado
+
+#             vertices  Si vertices es NULL, entonces las primeras
+#                       dos columnas de d son usadas como una lista
+#                       simbolica de vinculos y las columnas adicio-
+#                       nales las considera atributos de los vinculos.
+#                       Los nombres de los atributos son tomados a
+#                       partir de los nombres de las columnas.
+
+#                       Si vertices no es NULL, entonces este debe
+#                       ser un data frame que da los vertices.
+#                       La primer columna de vertices se asume que 
+#                       contiene los nombres simbolicos de los ver-
+#                       tices, estos se agregaran a los grafos como  
+#                       como el atributo "nombre" de vertice. Las 
+#                       otras columnas son agregadas como atributos 
+#                       de los vertices. Si vertices no es NULL en-
+#                       tonces la lista de vinculos simbolicos dada en
+#                       d es revisada para verifivar que contiene los
+#                       nombres de los vertices en el vertices.
+#
+#                       
+
+# Ejemplo:
+
+actores <- data.frame(nombre=c("Alicia", "Bob", "Cecil", "David", 
+                               "Esmeralda"),edad=c(48,33,45,34,21)
+                               ,genero=c("F","M","F","M","F"))
+
+actores
+
+relaciones <- data.frame(from=c("Bob","Cecil","Cecil","David","David"
+                                ,"Esmeralda"), to=c("Alicia", "Bob",
+                                 "Alicia", "Alicia","Bob", "Alicia"))
+
+relaciones
+
+g <- graph_from_data_frame(relaciones, directed = TRUE,
+                           vertices = actores)
+g
+
 print(g, e=TRUE, v=TRUE)
+
 plot(g)
 
-g
- 
-# del grafo a data.frame
+# Del grafo a data.frame
+
+# as_data_frame  convierte el grafo de igraph en uno o mas data
+#                frames, dependiendo del argumento what.                 
 
 as_data_frame(g, what="vertices")
 
 as_data_frame(g, what="edges")
+
+
+#El caso tipico es que estas tablas se lean a partir de un archivo.
