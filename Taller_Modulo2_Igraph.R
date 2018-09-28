@@ -534,6 +534,13 @@ plot(graph_from_edgelist(cbind(1:10, c(2:10,1)),directed=FALSE))
 
 # Ejemplo:
 
+#########sample########
+
+# sample (n, tamaño, remplace=FALSE, prob=NULL)
+
+
+#######################
+
 # Obtenemos una muestra de 100 elementos todos 1 o 0
 sample(0:1, 100, replace=TRUE, prob=c(0.9,0.1))
 
@@ -552,6 +559,7 @@ plot(g1)
 # Ejemplo:
 
 # Agregando nombres a los renglones y las columnas
+
 
 nrow(adjm) # numero de renglones de una matriz
 
@@ -573,7 +581,7 @@ plot(g2)
 ##    Creando grafos a partir de un data frame o viceversa  ##
 #             graph_from_data_frame( )
 
-
+?graph_from_data_frame( )
 # Descripción:
 #             Esta funcion crea un grafo de Igraph a partir de uno
 #             o dos data frames que contiene la lista (simbolica)
@@ -656,3 +664,28 @@ as_data_frame(g, what="edges")
 
 
 #El caso tipico es que estas tablas se lean a partir de un archivo.
+
+?read.csv
+vinculos <- read.csv("amistad.csv",header=T, as.is=T)
+
+vinculos
+
+amistad <- graph_from_data_frame(vinculos, directed = TRUE)
+
+plot(amistad)                           
+
+print_all(amistad)
+
+attributes(amistad)
+
+# Ejercicio:
+
+# A partir de la base de datos Zachary Karate Club construir un grafo
+
+zvinculos <- read.csv("ZacharyKarateClub.csv", header=T, as.is=T)
+karate <- graph_from_data_frame(zvinculos, directed=TRUE)
+plot(karate)
+plot(karate, edge.arrow.size=.1, vertex.color="red", 
+     vertex.size=15, vertex.frame.color="gray", 
+     vertex.label.color="black",vertex.label.cex=0.8, 
+     vertex.label.dist=0, edge.curved=0.2)
